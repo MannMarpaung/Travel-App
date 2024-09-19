@@ -3,7 +3,14 @@ import 'package:travel_app/detail_screen.dart';
 import 'package:travel_app/model/travel_data.dart';
 
 class HomeWidget extends StatelessWidget {
-  const HomeWidget({super.key});
+  const HomeWidget({
+    super.key,
+    required this.username,
+    required this.password,
+  });
+
+  final String? username;
+  final String? password;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +43,7 @@ class HomeWidget extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(left: 16.0),
                         child: Text(
-                          'Hello MannMarpaung',
+                          'Hello ${username == '' ? 'User' : username}',
                           style: TextStyle(
                             fontFamily: 'Jost',
                             fontWeight: FontWeight.w700,
